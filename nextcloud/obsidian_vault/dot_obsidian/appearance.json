@@ -1,0 +1,13 @@
+{
+  "accentColor": "",
+  "theme": "moonstone",
+  "cssTheme": "Minimal",
+  "baseFontSize": 21,
+  "showViewHeader": true,
+  "nativeMenus": false,
+  "enabledCssSnippets": [
+    "small-capitals",
+    "custom-callouts",
+    "small-caps"
+  ]
+}

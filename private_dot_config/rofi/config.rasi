@@ -1,0 +1,14 @@
+configuration {
+	modi: "window,drun,run,ssh";
+	matching: "fuzzy";
+	font: "RobotoMono Nerd Font 15";
+	show-icons: true;
+	window-format: "{t} \t on ws {w}";
+	icon-theme: "Tela-ubuntu";
+	drun-display-format: "{name}";
+	display-window: "";
+	display-run: "";
+	display-ssh: "撚";
+    display-drun: "";
+}
+@theme "fullscreen"

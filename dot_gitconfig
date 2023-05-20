@@ -1,0 +1,20 @@
+[core]
+	filemode = false
+	editor = nvim
+	excludesfile = ~/.gitignore_global
+[user]
+	name = Max Moeller
+	email = maximilian.moeller@mailbox.tu-dresden.de
+[alias]
+	tree = log --all --decorate --oneline --graph
+	tree-detailed = log --all --decorate --graph --pretty=format:'%C(auto)%H%d%n Summary: \t%s%n Date: \t%cd%n Author: \t%aN <%aE>%n' --compact-summary
+	rebase = false
+[log]
+	date = format:%A, %d.%m.%y, %R
+[credential]
+	helper = cache --timeout 3600
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

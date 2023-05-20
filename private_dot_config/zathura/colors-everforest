@@ -1,0 +1,27 @@
+set default-bg "#2d353b"
+set default-fg "#D3C6AA"
+
+set completion-bg "#343F44"
+set completion-fg "#859289"
+set completion-group-bg "#3D484D"
+set completion-group-fg "#9DA9A0"
+set completion-highlight-bg "#A7C080"
+set completion-highlight-fg "#475258"
+
+set inputbar-bg "#343F44"
+set inputbar-fg "#859289"
+
+set statusbar-bg "#343F44"
+set statusbar-fg "#859289"
+
+set index-bg "#2d353b"
+set index-fg "#D3C6AA"
+set index-active-bg "#A7C080"
+set index-active-fg "#475258"
+
+set highlight-color "#425047"
+set highlight-active-color "#A7C080"
+
+set recolor-darkcolor "#D3C6AA"
+set recolor-lightcolor "#2D353B"
+set recolor-reverse-video true

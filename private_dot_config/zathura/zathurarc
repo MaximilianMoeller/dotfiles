@@ -1,0 +1,17 @@
+## colorscheme
+include colors-everforest
+
+## look
+set n-completion-items 5
+set window-title-basename true
+set statusbar-basename true
+set guioptions s
+# start with dark mode
+set recolor true
+
+## functionality
+set incremental-search true
+set selection-clipboard "clipboard"
+# fixes that zathura can only follow links if firefox is already open
+set sandbox none
+unmap q
