@@ -1,0 +1,23 @@
+{
+  "showFrontmatter": false,
+  "showLineNumber": true,
+  "spellcheckLanguages": [
+    "en-US",
+    "en-GB",
+    "de"
+  ],
+  "spellcheck": false,
+  "vimMode": true,
+  "trashOption": "local",
+  "alwaysUpdateLinks": true,
+  "showInlineTitle": true,
+  "useTab": true,
+  "autoPairMarkdown": false,
+  "readableLineLength": false,
+  "strictLineBreaks": false,
+  "foldHeading": true,
+  "autoConvertHtml": true,
+  "foldIndent": false,
+  "livePreview": false,
+  "showUnsupportedFiles": false
+}
