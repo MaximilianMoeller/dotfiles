@@ -19,6 +19,7 @@ gaps inner 8
 gaps outer 0
 smart_gaps on
 smart_borders on
+floating_maximum_size 1050 x 920
 
 # window focus follows your mouse movements as the mouse crosses window borders
 focus_follows_mouse yes
@@ -101,11 +102,12 @@ bindsym $alt+Tab exec rofi -show window
 bindsym $mod+$alt+space exec rofi -show ssh
 
 # neo2 keyboard viewer
-bindsym $mod+Shift+H exec inkview ~/dotfiles/resources/neo_svgs/*.svg --class=floating_window
+# bindsym $mod+Shift+H exec inkview ~/dotfiles/resources/neo_svgs/*.svg
 for_window [class="inkview"] floating enable
 
 # Settings
-bindsym $mod+s exec gnome-control-center --class=floating_window
+bindsym $mod+s exec --no-startup-id regolith-control-center
+for_window [class="regolith-control-center"] floating enable
 
 # File Browsers
 bindsym $mod+n exec /usr/bin/x-terminal-emulator -e ranger
@@ -352,5 +354,4 @@ exec --no-startup-id /usr/bin/nm-applet
 # Hide the mouse pointer if unused for a duration
 exec --no-startup-id /usr/bin/unclutter -b
 
-exec --no-startup-id betterlockscreen -w
 exec --no-startup-id source ~/.fehbg
