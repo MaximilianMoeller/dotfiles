@@ -10,7 +10,3 @@ i3-wm.client.focused.color.child_border: #AAD3E9
 ## Wallpaper and lockscreen
 gnome.wallpaper: ~/Bilder/currentBackground.jpg
 i3-wm.program.lock: betterlockscreen -l dimblur
-!regolith.wallpaper.file: /home/max/.local/share/backgrounds/2023-05-27-16-33-58-currentBackground.jpg
-!regolith.lockscreen.wallpaper.file: /home/max/.local/share/backgrounds/2023-05-27-16-33-58-currentBackground.jpg
-regolith.wallpaper.file: /home/max/.local/share/backgrounds/2023-05-27-16-33-58-currentBackground.jpg
-regolith.lockscreen.wallpaper.file: /home/max/.local/share/backgrounds/2023-05-27-16-33-58-currentBackground.jpg
