@@ -19,7 +19,9 @@ gaps inner 8
 gaps outer 0
 smart_gaps on
 smart_borders on
-floating_maximum_size 1050 x 920
+floating_minimum_size 300 x 200
+floating_maximum_size -1 x -1
+
 
 # window focus follows your mouse movements as the mouse crosses window borders
 focus_follows_mouse yes
