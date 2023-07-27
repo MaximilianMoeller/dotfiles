@@ -271,6 +271,11 @@ mode "Resize Mode" {
         bindsym Down resize shrink height 5 px or 5 ppt
         bindsym Right resize grow width 5 px or 5 ppt
 
+        bindsym Shift+Left resize shrink width 50 px or 50 ppt
+        bindsym Shift+Up resize grow height 50 px or 50 ppt
+        bindsym Shift+Down resize shrink height 50 px or 50 ppt
+        bindsym Shift+Right resize grow width 50 px or 50 ppt
+
         # Exit Resize Mode
         bindsym Return mode "default"
         bindsym Escape mode "default"
