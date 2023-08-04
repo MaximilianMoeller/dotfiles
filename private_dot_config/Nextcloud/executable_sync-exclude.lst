@@ -53,5 +53,4 @@ Texfiles
 *-converted-to.*
 ]__pycache__/
 .trash/
-.obsidian/
 ]*.autosave.xopp
