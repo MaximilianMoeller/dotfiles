@@ -1,22 +1,32 @@
 [core]
+	# ignore filemode changes, e.g. -rwxrwxr-x -> -rwxrwx---
 	filemode = false
 	editor = nvim
+	# some globally ignored files
 	excludesfile = ~/.gitignore_global
+	# if windows-like linebreaks (i.e. CarriageReturn AND LineFeed) are detected when checking in a file, automatically convert them to linux-like linebreaks
+	autocrlf = input
 [user]
 	name = Max Moeller
 	email = maximilian.moeller@mailbox.tu-dresden.de
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
 [alias]
 	tree = log --all --decorate --oneline --graph
-	tree-detailed = log --all --decorate --graph --pretty=format:'%C(auto)%H%d%n Summary: \t%s%n Date: \t%cd%n Author: \t%aN <%aE>%n' --compact-summary
-	rebase = false
+	# uses literal whitespaces instead of some '\t'-construction, because in the graph this might still result in different indentation
+	tree-detailed = log --all --decorate --graph --pretty=format:'%C(auto)%h%d%n Summary:  %s%n Date:     %cd%n Author:   %aN <%aE>%n' --compact-summary
+	last = log -1 HEAD --decorate --pretty=format:'%C(auto)%h%d%n Summary:  %s%n Date:     %cd%n Author:   %aN <%aE>%n' --compact-summary
+	# unstage a file
+	unstage = restore --staged --
 [log]
 	date = format:%A, %d.%m.%y, %R
 [credential]
+	# cache credentials for one hour
 	helper = cache --timeout 3600
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[init]
-	defaultBranch = main
