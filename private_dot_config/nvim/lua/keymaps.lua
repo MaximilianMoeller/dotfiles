@@ -8,7 +8,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- temporary for reloading init.lua
-vim.keymap.set('n', '<leader>r', '<cmd>source $MYVIMRC<cr>', {})
+-- vim.keymap.set('n', '<leader>r', '<cmd>source $MYVIMRC<cr>', {})
 -- no longer highlight the current search
 vim.keymap.set('', '<leader>/', '<cmd>nohlsearch<cr>', {})
 -- write current or all buffers
