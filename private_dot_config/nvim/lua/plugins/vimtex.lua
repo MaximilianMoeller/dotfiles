@@ -16,10 +16,5 @@ return {
       'Overfull',
       'Underfull',
 	}
-	vim.api.nvim_create_autocmd("User", {
-      group = "vimtex",
-      pattern = "VimtexEventQuit",
-      command = "VimtexClean",
-    })
     end,
   }
