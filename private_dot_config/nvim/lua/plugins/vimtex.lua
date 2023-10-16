@@ -15,6 +15,8 @@ return {
 	vim.g.vimtex_quickfix_ignore_filters = {
       'Overfull',
       'Underfull',
+	  -- this error is just useless
+	  '/m/up',
 	}
     end,
   }
