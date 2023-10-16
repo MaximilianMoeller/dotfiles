@@ -1,0 +1,364 @@
+###############################################################################
+# General Settings
+###############################################################################
+
+# Meta Key - Alt key is Mod1, and Windows key is Mod4
+set $mod Mod4
+set $alt Mod1
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Hiding borders adjacent to the screen edges.
+hide_edge_borders none
+
+# Gaps configuration
+# next line is needed for gaps
+for_window [class=".*"] border pixel 3
+gaps inner 8
+gaps outer 0
+smart_gaps on
+smart_borders on
+floating_minimum_size 300 x 200
+floating_maximum_size -1 x -1
+
+
+# window focus follows your mouse movements as the mouse crosses window borders
+focus_follows_mouse yes
+
+# Sets i3 font for dialogs
+font pango:Source Code Pro Medium 13
+
+###############################################################################
+# Workspace Names
+# These are the labels which define each i3 workspace.
+###############################################################################
+
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
+set $ws11 11
+set $ws12 12
+set $ws13 13
+set $ws14 14
+set $ws15 15
+set $ws16 16
+set $ws17 17
+set $ws18 18
+set $ws19 19
+set $ws20 20
+
+###############################################################################
+# Assign workspaces to outputs
+###############################################################################
+set $main_monitor DP-2
+set $sec_monitor DP-4
+
+workspace "$ws1" output $main_monitor
+workspace "$ws10" output $main_monitor
+workspace "$ws2" output $sec_monitor
+workspace "$ws15" output $sec_monitor
+workspace "$ws16" output $sec_monitor
+workspace "$ws17" output $sec_monitor
+workspace "$ws18" output $sec_monitor
+workspace "$ws19" output $sec_monitor
+workspace "$ws20" output $sec_monitor
+
+###############################################################################
+# Workspace Keys
+# These are the keys which will be used while binding workspace switching
+###############################################################################
+
+set $ws1_key 1
+set $ws2_key 2
+set $ws3_key 3
+set $ws4_key 4
+set $ws5_key 5
+set $ws6_key 6
+set $ws7_key 7
+set $ws8_key 8
+set $ws9_key 9
+set $ws10_key 0
+
+###############################################################################
+# Launch applications
+###############################################################################
+
+# Terminal
+bindsym $mod+Return exec /usr/bin/x-terminal-emulator
+
+# Browser
+bindsym $mod+Shift+Return exec gtk-launch $(xdg-settings get default-web-browser)
+
+# rofi
+bindsym $mod+space exec rofi -show drun
+bindsym $mod+Shift+space exec rofi -show run
+bindsym $alt+Tab exec rofi -show window
+bindsym $mod+$alt+space exec rofi -show ssh
+
+# neo2 keyboard viewer
+# bindsym $mod+Shift+H exec inkview ~/dotfiles/resources/neo_svgs/*.svg
+for_window [class="inkview"] floating enable
+
+# Settings
+bindsym $mod+s exec --no-startup-id gnome-control-center
+for_window [class="Gnome-control-center"] floating enable
+
+# File Browsers
+bindsym $mod+n exec /usr/bin/x-terminal-emulator -e ranger
+bindsym $mod+Shift+n exec /usr/bin/nautilus --new-window
+
+###############################################################################
+# Window and Workspace Navigation
+###############################################################################
+
+# Relative Parent and Child
+bindsym $mod+p focus parent
+bindsym $mod+c focus child
+
+# Relative Window
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+# Relative Window Alternative (neo2 layout)
+bindsym $mod+i focus left
+bindsym $mod+a focus down
+bindsym $mod+l focus up
+bindsym $mod+e focus right
+
+# Workspaces 1-10
+bindsym $mod+$ws1_key workspace number $ws1
+bindsym $mod+$ws2_key workspace number $ws2
+bindsym $mod+$ws3_key workspace number $ws3
+bindsym $mod+$ws4_key workspace number $ws4
+bindsym $mod+$ws5_key workspace number $ws5
+bindsym $mod+$ws6_key workspace number $ws6
+bindsym $mod+$ws7_key workspace number $ws7
+bindsym $mod+$ws8_key workspace number $ws8
+bindsym $mod+$ws9_key workspace number $ws9
+bindsym $mod+$ws10_key workspace number $ws10
+# Workspace 11 - 20
+bindsym $mod+Ctrl+$ws1_key workspace number $ws11
+bindsym $mod+Ctrl+$ws2_key workspace number $ws12
+bindsym $mod+Ctrl+$ws3_key workspace number $ws13
+bindsym $mod+Ctrl+$ws4_key workspace number $ws14
+bindsym $mod+Ctrl+$ws5_key workspace number $ws15
+bindsym $mod+Ctrl+$ws6_key workspace number $ws16
+bindsym $mod+Ctrl+$ws7_key workspace number $ws17
+bindsym $mod+Ctrl+$ws8_key workspace number $ws18
+bindsym $mod+Ctrl+$ws9_key workspace number $ws19
+bindsym $mod+Ctrl+$ws10_key workspace number $ws20
+
+# Next and Previous Workspaces
+bindsym $mod+$alt+Right workspace next
+bindsym $mod+$alt+Left workspace prev
+
+# Next and Previous Workspaces on Output
+bindsym $mod+Ctrl+Right workspace next_on_output
+bindsym $mod+Ctrl+Left workspace prev_on_output
+
+# Move to and from scratchpad
+bindsym $mod+m move to scratchpad
+bindsym $mod+Shift+m scratchpad show
+
+###############################################################################
+# Window and Workspace Configuration
+###############################################################################
+
+# Window Position
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Workspace Output
+bindsym $mod+Ctrl+Shift+Left move workspace to output left
+bindsym $mod+Ctrl+Shift+Down move workspace to output down
+bindsym $mod+Ctrl+Shift+Up move workspace to output up
+bindsym $mod+Ctrl+Shift+Right move workspace to output right
+
+# Window Orientation
+bindsym $mod+v split vertical
+bindsym $mod+h split horizontal
+bindsym $mod+t layout toggle splitv splith
+bindsym $mod+Shift+t layout tabbed
+
+# Fullscreen/Floating
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f floating toggle
+bindsym $mod+Ctrl+f focus mode_toggle
+
+# Move Window to Workspace 1 - 10
+bindsym $mod+Shift+$ws1_key move container to workspace number $ws1
+bindsym $mod+Shift+$ws2_key move container to workspace number $ws2
+bindsym $mod+Shift+$ws3_key move container to workspace number $ws3
+bindsym $mod+Shift+$ws4_key move container to workspace number $ws4
+bindsym $mod+Shift+$ws5_key move container to workspace number $ws5
+bindsym $mod+Shift+$ws6_key move container to workspace number $ws6
+bindsym $mod+Shift+$ws7_key move container to workspace number $ws7
+bindsym $mod+Shift+$ws8_key move container to workspace number $ws8
+bindsym $mod+Shift+$ws9_key move container to workspace number $ws9
+bindsym $mod+Shift+$ws10_key move container to workspace number $ws10
+# Move Window to Workspace 11 - 1
+bindsym $mod+Shift+Ctrl+$ws1_key move container to workspace number $ws11
+bindsym $mod+Shift+Ctrl+$ws2_key move container to workspace number $ws12
+bindsym $mod+Shift+Ctrl+$ws3_key move container to workspace number $ws13
+bindsym $mod+Shift+Ctrl+$ws4_key move container to workspace number $ws14
+bindsym $mod+Shift+Ctrl+$ws5_key move container to workspace number $ws15
+bindsym $mod+Shift+Ctrl+$ws6_key move container to workspace number $ws16
+bindsym $mod+Shift+Ctrl+$ws7_key move container to workspace number $ws17
+bindsym $mod+Shift+Ctrl+$ws8_key move container to workspace number $ws18
+bindsym $mod+Shift+Ctrl+$ws9_key move container to workspace number $ws19
+bindsym $mod+Shift+Ctrl+$ws10_key move container to workspace number $ws20
+
+
+###############################################################################
+# Session Management
+###############################################################################
+
+# Exit App
+bindsym $mod+Shift+q [con_id="__focused__"] kill
+
+# Reload/Restart i3 Config
+bindsym $mod+Shift+r reload
+bindsym $mod+Ctrl+r restart
+
+# TODO use some sort of power menu to replace these
+# Logout
+set_from_resource $i3-wm.binding.logout i3-wm.binding.logout Shift+e
+set_from_resource $i3-wm.program.logout i3-wm.program.logout /usr/bin/gnome-session-quit --logout
+bindsym $mod+$i3-wm.binding.logout exec $i3-wm.program.logout
+
+# Reboot
+set_from_resource $i3-wm.binding.reboot i3-wm.binding.reboot Shift+b
+set_from_resource $i3-wm.program.reboot i3-wm.program.reboot /usr/bin/gnome-session-quit --reboot
+bindsym $mod+$i3-wm.binding.reboot exec $i3-wm.program.reboot
+
+# Power Down
+set_from_resource $i3-wm.binding.shutdown i3-wm.binding.shutdown Shift+p
+set_from_resource $i3-wm.program.shutdown i3-wm.program.shutdown /usr/bin/gnome-session-quit --power-off
+bindsym $mod+$i3-wm.binding.shutdown exec $i3-wm.program.shutdown
+
+# Lock Screen
+set_from_resource $i3-wm.binding.lock i3-wm.binding.lock Escape
+set_from_resource $i3-wm.program.lock i3-wm.program.lock xdg-screensaver lock
+bindsym $mod+$i3-wm.binding.lock exec $i3-wm.program.lock
+
+###############################################################################
+# Window Resize and Gaps
+###############################################################################
+
+# Enter Resize Mode
+mode "Resize Mode" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Resize Window
+        bindsym i resize shrink width 5 px or 5 ppt
+        bindsym l resize grow height 5 px or 5 ppt
+        bindsym a resize shrink height 5 px or 5 ppt
+        bindsym e resize grow width 5 px or 5 ppt
+
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Up resize grow height 5 px or 5 ppt
+        bindsym Down resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+
+        bindsym Shift+Left resize shrink width 50 px or 50 ppt
+        bindsym Shift+Up resize grow height 50 px or 50 ppt
+        bindsym Shift+Down resize shrink height 50 px or 50 ppt
+        bindsym Shift+Right resize grow width 50 px or 50 ppt
+
+        # Exit Resize Mode
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+
+		 # Window Gaps
+		bindsym Prior gaps inner current minus 2
+		bindsym Next gaps inner current plus 2
+}
+bindsym $mod+r mode "Resize Mode"
+
+set $RoboLabMode "RoboLab Mode: [p]articipant data [r]epo [c]urrent runs [l]ock screen"
+mode $RoboLabMode {
+        bindsym p workspace number $ws11; exec python3 ~/robolab/myscripts/participants.py; layout tabbed; mode "default"
+        bindsym r workspace number $ws12; exec python3 ~/robolab/myscripts/repo.py; mode "default"
+		bindsym c workspace number $ws13; exec python3 ~/robolab/myscripts/current_runs.py; mode "default"
+		bindsym l exec xtrlock; mode "default"
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+d mode "default"
+
+}
+bindsym $mod+d mode $RoboLabMode
+
+###############################################################################
+# Auto assignement of windows
+###############################################################################
+
+# no reason not to have zoom on ws1
+assign [class="(?i)zoom"] $ws1
+assign [class="java-lang-Thread"] $ws10
+assign [class="jetbrains-*"] $ws10
+assign [class="(?i)code"] $ws10
+# workaround since spotify is bugged
+for_window [class="(?i)Spotify"] move to workspace $ws16
+for_window [title="* - Zotero"] move to workspace $ws8
+assign [class="(?i)element"] $ws17
+assign [class="(?i)Slack"] $ws17
+assign [class="Microsoft Teams - Preview"] $ws17
+assign [class="(?i)TelegramDesktop"] $ws17
+assign [class="(?i)Thunderbird"] $ws18
+assign [class="discord" instance="discord"] $ws19
+
+# floating windows
+for_window [class="(?i)matplot"] floating enable
+for_window [class="floating_window"] floating enable
+for_window [title="Quick Format Citation"] floating enable
+for_window [title="Quick Format Citation"] move position center
+
+###############################################################################
+# i3 Colors and Fonts
+###############################################################################
+
+# Create variables from Xresources for i3's look.
+set $bg "#282828"
+set $fg "#ebdbb2"
+set $primary "#b8bb26"
+set $sec "#83a598"
+set $alert "#fb4934"
+
+# Window Border color
+# class                 border		background	text		indicator	child_border
+client.focused          $primary	$bg			    $fg		$sec      	$primary	
+client.focused_inactive $bg			$bg			    $fg		$bg			$sec
+client.unfocused        $bg			$bg			    $fg		$bg			$bg
+client.urgent           $alert		$bg			    $alert	$alert		$alert
+
+###############################################################################
+# External programs launched with i3
+###############################################################################
+
+# Start the installed regolith-compositor
+exec_always --no-startup-id /usr/share/regolith-compositor/init
+
+# Start redshift and polybar
+exec --no-startup-id redshift -c ~/.config/redshift.conf
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Load nm-applet
+exec --no-startup-id /usr/bin/nm-applet
+
+# Hide the mouse pointer if unused for a duration
+exec --no-startup-id /usr/bin/unclutter -b
+
+exec_always --no-startup-id ~/.fehbg

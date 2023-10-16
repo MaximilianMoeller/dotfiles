@@ -1,6 +1,5 @@
 ## colorscheme
-include colors-everforest
-
+include colors-gruvbox
 ## look
 set n-completion-items 5
 set window-title-basename true
