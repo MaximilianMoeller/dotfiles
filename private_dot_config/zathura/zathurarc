@@ -1,5 +1,5 @@
 ## colorscheme
-include colors-gruvbox
+include colors-gruvbox-soft
 ## look
 set n-completion-items 5
 set window-title-basename true
