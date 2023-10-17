@@ -190,6 +190,7 @@ bindsym $mod+v split vertical
 bindsym $mod+h split horizontal
 bindsym $mod+t layout toggle splitv splith
 bindsym $mod+Shift+t layout tabbed
+bindsym $mod+Ctrl+t layout default
 
 # Fullscreen/Floating
 bindsym $mod+f fullscreen toggle
