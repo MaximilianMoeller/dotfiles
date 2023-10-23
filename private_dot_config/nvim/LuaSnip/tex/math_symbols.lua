@@ -80,7 +80,7 @@ return {
 	s({trig="<<", snippetType="autosnippet"}, t("\\ll"), {condition = in_mathzone}),
 	s({trig=">>", snippetType="autosnippet"}, t("\\gg"), {condition = in_mathzone}),
 	s({trig="->", snippetType="autosnippet"}, t("\\to"), {condition = in_mathzone}),
-	s({trig="|->", snippetType="autosnippet"}, t("\\mapsto"), {condition = in_mathzone}),
+	s({trig="|>", snippetType="autosnippet"}, t("\\mapsto"), {condition = in_mathzone}),
 	s({trig="<-", snippetType="autosnippet"}, t("\\leftarrow"), {condition = in_mathzone}),
 
 	-- operators
