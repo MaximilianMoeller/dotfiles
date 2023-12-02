@@ -109,11 +109,15 @@ for_window [class="inkview"] floating enable
 
 # Settings
 bindsym $mod+s exec --no-startup-id gnome-control-center
-for_window [class="Gnome-control-center"] floating enable
+for_window [class="(?i)gnome-control-center"] floating enable
 
 # File Browsers
 bindsym $mod+n exec /usr/bin/x-terminal-emulator -e ranger
 bindsym $mod+Shift+n exec /usr/bin/nautilus --new-window
+
+# Calculator
+bindsym $mod+Shift+c exec gnome-calculator
+for_window [title="(?i)calculator"] floating enable
 
 ###############################################################################
 # Window and Workspace Navigation
@@ -234,7 +238,7 @@ bindsym $mod+Ctrl+r restart
 
 # TODO use some sort of power menu to replace these
 # Logout
-set_from_resource $i3-wm.binding.logout i3-wm.binding.logout Shift+e
+set_from_resource $i3-wm.binding.logout i3-wm.binding.logout Shift+l
 set_from_resource $i3-wm.program.logout i3-wm.program.logout /usr/bin/gnome-session-quit --logout
 bindsym $mod+$i3-wm.binding.logout exec $i3-wm.program.logout
 
