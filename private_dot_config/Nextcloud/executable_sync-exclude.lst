@@ -54,3 +54,4 @@ Texfiles
 ]__pycache__/
 .trash/
 ]*.autosave.xopp
+]cursor-positions.json
