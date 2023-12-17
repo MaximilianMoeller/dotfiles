@@ -53,6 +53,6 @@ Texfiles
 *-converted-to.*
 ]__pycache__/
 .trash/
-]*.autosave.xopp
-]cursor-positions.json
-]workspace.json
+*.autosave.xopp
+cursor-positions.json
+workspace.json
