@@ -27,10 +27,18 @@
   ef-sec:     #425047;
   ef-alert:   #E67E80;
 
-  fg: @ef-fg;
-  bg: @ef-bg;
-  primary: @ef-primary;
-  secondary: @ef-sec;
-	selected: @ef-bg-alt;
+  gruv-bg:      #282828;
+  gruv-bg-alt:  #3c3836;
+  gruv-fg:      #ebdbb2;
+  gruv-fg-alt:  #fbf1c7;
+  gruv-primary: #b8bb26;
+  gruv-sec:     #98971a;
+  gruv-alert:   #fb4936;
+
+  fg: @gruv-fg;
+  bg: @gruv-bg;
+  primary: @gruv-primary;
+  secondary: @gruv-sec;
+	selected: @gruv-bg-alt;
 	transparent: #00000000;
 }
