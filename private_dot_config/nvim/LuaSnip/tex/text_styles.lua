@@ -24,6 +24,6 @@ return {
 	s({trig="mf", snippetType="autosnippet"}, fmta([[\mathfrak{<>}]],{d(1, get_visual),}), {condition=in_mathzone}),
 	s({trig="mb", snippetType="autosnippet"}, fmta([[\bm{<>}]],{d(1, get_visual),}), {condition=in_mathzone}),
 	s({trig="tt", snippetType="autosnippet"}, fmta([[\text{<>}]],{d(1, get_visual),}), {condition=in_mathzone}),
-	s({trig="vv", snippetType="autosnippet"}, fmta([[\val{<>}]],{d(1, get_visual),}), {condition=in_mathzone}),
+	s({trig="vv", snippetType="autosnippet"}, fmta([[\var{<>}]],{d(1, get_visual),}), {condition=in_mathzone}),
 	s({trig="ff", snippetType="autosnippet"}, fmta([[\func{<>}]],{d(1, get_visual),}), {condition=in_mathzone}),
 }
