@@ -16,7 +16,7 @@ local in_mathzone = utils.in_mathzone
 -- this file only contains static snippets, i.e. snippets for which no input is needed
 return {
 	-- sets
-	s({trig="nul", snippetType="autosnippet"}, t("\\emptyset"), {condition = in_mathzone}),
+	s({trig="eset", snippetType="autosnippet"}, t("\\emptyset"), {condition = in_mathzone}),
 	s({trig="NN", snippetType="autosnippet"}, t("\\N"), {condition = in_mathzone}),
 	s({trig="ZZ", snippetType="autosnippet"}, t("\\Z"), {condition = in_mathzone}),
 	s({trig="QQ", snippetType="autosnippet"}, t("\\Q"), {condition = in_mathzone}),
