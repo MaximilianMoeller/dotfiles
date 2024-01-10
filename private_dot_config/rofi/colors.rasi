@@ -27,18 +27,32 @@
   ef-sec:     #425047;
   ef-alert:   #E67E80;
 
-  gruv-bg:      #282828;
-  gruv-bg-alt:  #3c3836;
-  gruv-fg:      #ebdbb2;
-  gruv-fg-alt:  #fbf1c7;
-  gruv-primary: #b8bb26;
-  gruv-sec:     #98971a;
-  gruv-alert:   #fb4936;
+  gruv-bg: #282828;
+  gruv-bg-alt: #3c3836;
+  gruv-bg-darker: #1d2021;
+  gruv-fg: #fbf1c7;
+  
+  gruv-blue: #83a598;
+  gruv-cyan: #8ec07c;
+  gruv-green: #b8bb26;
+  gruv-orange: #fe8019;
+  gruv-purple: #d3869b;
+  gruv-red: #fb4934;
+  gruv-yellow: #fabd2f;
+  
+  gruv-bg-blue: #458588;
+  gruv-bg-cyan: #689d6a;
+  gruv-bg-green: #98971a;
+  gruv-bg-orange: #d65d0e;
+  gruv-bg-purple: #b16268;
+  gruv-bg-red: #cc241d;
+  gruv-bg-yellow: #d79921;
 
   fg: @gruv-fg;
   bg: @gruv-bg;
-  primary: @gruv-primary;
-  secondary: @gruv-sec;
-	selected: @gruv-bg-alt;
-	transparent: #00000000;
+  bg-alt: @gruv-bg-alt;
+  primary: @gruv-bg-cyan;
+  secondary: @gruv-cyan;
+  selected: @gruv-bg-alt;
+  transparent: #00000000;
 }

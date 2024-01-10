@@ -26,12 +26,11 @@ mainbox {
 
 inputbar {
 	children: 						[ prompt, entry ];
-    background-color:               @primary;
+    background-color:               @bg-alt;
     text-color:                     @bg;
     expand:                         false;
 	border:							0% 0% 0% 0%;
     border-radius:                  5px;
-	border-color:					@primary;
 	// golden ratio
     margin:                         0% 38.2% 0% 0%;
     padding:                        1.5%;
@@ -41,13 +40,13 @@ prompt {
     enabled: 						true;
 	padding: 						0% 1% 0% -0.5%;
 	background-color: 				@transparent;
-	text-color: 					@bg;
+	text-color: 					@fg;
 }
 
 entry {
     background-color:               @transparent;
-    text-color:                     @bg;
-    placeholder-color:              @bg;
+    text-color:                     @fg;
+    placeholder-color:              @fg;
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Search";
