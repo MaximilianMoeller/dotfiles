@@ -38,10 +38,13 @@ else
   export EDITOR=nvim
 fi
 
+if [ -d "$HOME/.local/share/JetBrains/Toolbox/scripts" ] ; then
+    PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
+fi
 
-
-# Added by Toolbox App
-export PATH="$PATH:/home/max/.local/share/JetBrains/Toolbox/scripts"
+if [ -d "$HOME/.local/share/bob/nvim-bin" ] ; then
+	PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+fi
 
 export GUROBI_HOME="/opt/gurobi1001/linux64"  
 export PATH="${PATH}:${GUROBI_HOME}/bin"  
