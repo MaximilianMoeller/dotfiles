@@ -8,8 +8,9 @@ return {
       		'Overfull',
 			'Underfull',
 			-- this error is just useless
-			'/m/up',
-			'Package pgf Warning: Returning node center instead of a point on node border.',
+			--'/m/up',
+			--'Package pgf Warning: Returning node center instead of a point on node border.',
+			'Neither package',
 		}
     end,
   }
