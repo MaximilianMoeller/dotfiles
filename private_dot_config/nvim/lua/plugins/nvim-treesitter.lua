@@ -4,7 +4,10 @@ return {
 	lazy = false,
 
   opts = {
-    highlight = { enable = true },
+    highlight = { 
+			enable = true,
+			disable = { "latex" },
+		},
     indent = { enable = true },
     ensure_installed = {
 		-- for neovim
