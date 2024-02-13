@@ -10,7 +10,7 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
 local utils = require('plugins.luasnip.utils')
-local line_begin = require("luasnip.extras.expand_conditions").line_begin
+local line_begin = require("luasnip.extras.conditions.expand").line_begin
 local get_visual = utils.get_visual
 local in_mathzone = utils.in_mathzone
 local in_text = utils.in_text
@@ -27,7 +27,7 @@ return {
 			<>
 			]], 
 			{i(1), i(0)}),
-		{condition = line_begin and in_text}),
+		{condition = line_begin * in_text}),
 
 	-- subscripts, superscripts and fractions
 	s({trig="_", snippetType="autosnippet", wordTrig=false},
