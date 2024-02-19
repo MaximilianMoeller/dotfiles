@@ -22,7 +22,7 @@ return {
 	s({trig="mc", snippetType="autosnippet"}, fmta([[\mathcal{<>}]],{d(1, get_visual),}), {condition=in_mathzone}),
 	s({trig="ms", snippetType="autosnippet"}, fmta([[\mathscr{<>}]],{d(1, get_visual),}), {condition=in_mathzone}),
 	s({trig="mf", snippetType="autosnippet"}, fmta([[\mathfrak{<>}]],{d(1, get_visual),}), {condition=in_mathzone}),
-	s({trig="mb", snippetType="autosnippet"}, fmta([[\bm{<>}]],{d(1, get_visual),}), {condition=in_mathzone}),
+	s({trig="mb", snippetType="autosnippet"}, fmta([[\mathbb{<>}]],{d(1, get_visual),}), {condition=in_mathzone}),
 	s({trig="tt", snippetType="autosnippet"}, fmta([[\text{<>}]],{d(1, get_visual),}), {condition=in_mathzone}),
 	s({trig="vv", snippetType="autosnippet"}, fmta([[\var{<>}]],{d(1, get_visual),}), {condition=in_mathzone}),
 	s({trig="ff", snippetType="autosnippet"}, fmta([[\func{<>}]],{d(1, get_visual),}), {condition=in_mathzone}),
