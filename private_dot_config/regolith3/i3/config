@@ -310,14 +310,22 @@ bindsym $mod+d mode $RoboLabMode
 # Auto assignement of windows
 ###############################################################################
 
-# no reason not to have zoom on ws1
 assign [class="(?i)zoom"] $ws1
+# only move main zotero window, not popups like the obsidian paper selection
+assign [class="(?i)zotero" window_role="browser"] $ws9
+for_window [class="(?i)zotero" window_role="search"] floating enable
+for_window [class="(?i)zotero" window_role="search"] move position center
+for_window [class="(?i)zotero" title="Quick Format Citation"] floating enable
+for_window [class="(?i)zotero" title="Quick Format Citation"] move position center
+
+# coding
 assign [class="java-lang-Thread"] $ws10
 assign [class="jetbrains-*"] $ws10
 assign [class="(?i)code"] $ws10
 # workaround since spotify is bugged
 for_window [class="(?i)Spotify"] move to workspace $ws16
-for_window [title="* - Zotero"] move to workspace $ws8
+
+# messenger
 assign [class="(?i)element"] $ws17
 assign [class="(?i)Slack"] $ws17
 assign [class="Microsoft Teams - Preview"] $ws17
@@ -328,8 +336,6 @@ assign [class="discord" instance="discord"] $ws19
 # floating windows
 for_window [class="(?i)matplot"] floating enable
 for_window [class="floating_window"] floating enable
-for_window [title="Quick Format Citation"] floating enable
-for_window [title="Quick Format Citation"] move position center
 
 ###############################################################################
 # i3 Colors and Fonts
