@@ -9,8 +9,18 @@ set guioptions s
 set recolor true
 
 ## functionality
-set incremental-search true
+# do not search while typing
+set incremental-search false
+# allows copying to clipboard
 set selection-clipboard "clipboard"
+# switch between odd or even pages in the first column
+map <F1> set "first-page-column 1:1"
+map <A-F1> set "first-page-column 1:2"
+
+# switch between 2 and 3 rows per row in dual-page mode (accessed by hotkey "d")
+map <F2> set "pages-per-row 3"
+map <A-F2> set "pages-per-row 2"
+
 # fixes that zathura can only follow links if firefox is already open
 set sandbox none
 unmap q
