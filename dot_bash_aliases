@@ -1,5 +1,4 @@
 alias ls='ls -lh --color=auto'
-alias rm='rm -I'
 alias f='fuck'
 alias conf='cd ~/dotfiles/config && nvim'
 alias update='sudo apt update && sudo apt upgrade'
