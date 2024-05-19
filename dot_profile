@@ -31,6 +31,12 @@ if [ -f "$HOME/.cargo/env" ]; then
   .  "$HOME/.cargo/env"
 fi
 
+# load bob, the neovim-installer, if it exists
+if [ -d "$HOME/.local/share/bob/nvim-bin" ] ; then
+	PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+fi
+
+# set nvim to be the default editor if it exists
 if ! command -v nvim &> /dev/null
 then
   export EDITOR=vi
@@ -38,15 +44,12 @@ else
   export EDITOR=nvim
 fi
 
+# add jetbrains IDEs to path if they exist
 if [ -d "$HOME/.local/share/JetBrains/Toolbox/scripts" ] ; then
     PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
 fi
 
-if [ -d "$HOME/.local/share/bob/nvim-bin" ] ; then
-	PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
-fi
-
+# TODO: setup gurobi in a way that does not cause troubles if it is not installed.
 export GUROBI_HOME="/opt/gurobi1001/linux64"  
 export PATH="${PATH}:${GUROBI_HOME}/bin"  
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
-. "$HOME/.cargo/env"
