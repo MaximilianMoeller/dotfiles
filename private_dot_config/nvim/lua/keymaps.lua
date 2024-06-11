@@ -4,6 +4,9 @@ vim.keymap.set('', 'j', '<nop>', {})
 vim.keymap.set('', 'k', '<nop>', {})
 vim.keymap.set('', 'l', '<nop>', {})
 
+-- kitty supports CSI u, i.e., tab and ctrl-i can be differentiated
+vim.keymap.set('', '<tab>', '<nop>', {})
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -11,9 +14,7 @@ vim.g.maplocalleader = ' '
 -- vim.keymap.set('n', '<leader>r', '<cmd>source $MYVIMRC<cr>', {})
 -- no longer highlight the current search
 vim.keymap.set('', '<leader>/', '<cmd>nohlsearch<cr>', {})
--- write current or all buffers
-vim.keymap.set('', '<leader>w', '<cmd>write<cr>', {})
-vim.keymap.set('', '<leader>W', '<cmd>wall<cr>', {})
+
 
 -- jumps
 -- jump to definition
