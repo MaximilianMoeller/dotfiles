@@ -1,4 +1,4 @@
-return{
+return {
 	"nvim-telescope/telescope.nvim",
 	branch = "0.1.x",
 	lazy = true,
@@ -13,7 +13,7 @@ return{
 			winblend = vim.o.winblend,
 			mappings = {
 				i = {
-					["<esc>"] = "close",
+					["<Esc>"] = "close",
 				},
 			},
 		},
@@ -36,9 +36,9 @@ return{
 	keys = function()
 		local builtin = require("telescope.builtin")
 		return {
-			{ "<leader>fb", builtin.buffers, desc = "Find Buffers" },
-			{ "<leader>ff", builtin.find_files, desc = "Find Files" },
-			{ "<leader>fg", builtin.live_grep, desc = "Find Grep" },
+			{ "<leader>fb", builtin.buffers,     desc = "Find Buffers" },
+			{ "<leader>ff", builtin.find_files,  desc = "Find Files" },
+			{ "<leader>fg", builtin.live_grep,   desc = "Find Grep" },
 			{ "<leader>fc", builtin.colorscheme, desc = "Find Colorschemes" },
 		}
 	end,

@@ -18,7 +18,8 @@ vim.keymap.set('', '<leader>/', '<cmd>nohlsearch<cr>', {})
 
 -- jumps
 -- jump to definition
-vim.keymap.set('', '<c-g>', '<c-]>', {})
+-- only in normal mode, because <c-g> has a different meaning in visual/select mode (namely, switching between the two).
+vim.keymap.set('n', '<c-g>', '<c-]>', {})
 -- jupm between last jumps
 vim.keymap.set('', '<c-i>', '<c-o>', {})
 vim.keymap.set('', '<c-e>', '<c-i>', {})
@@ -32,7 +33,7 @@ vim.keymap.set('', '<c-l>', '<c-y>', {})
 vim.keymap.set('', '<leader>h', '<cmd>split<cr>', {})
 vim.keymap.set('', '<leader>v', '<cmd>vsplit<cr>', {})
 
-vim.keymap.set('', '<leader>l', '<c-w><Up>', {silent=true})
-vim.keymap.set('', '<leader>i', '<c-w><Left>', {silent=true})
-vim.keymap.set('', '<leader>e', '<c-w><Right>', {silent=true})
-vim.keymap.set('', '<leader>a', '<c-w><Down>', {silent=true})
+vim.keymap.set('', '<leader>l', '<c-w><Up>', { silent = true })
+vim.keymap.set('', '<leader>i', '<c-w><Left>', { silent = true })
+vim.keymap.set('', '<leader>e', '<c-w><Right>', { silent = true })
+vim.keymap.set('', '<leader>a', '<c-w><Down>', { silent = true })
