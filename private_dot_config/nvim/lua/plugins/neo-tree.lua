@@ -2,9 +2,9 @@ return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v3.x",
 	dependencies = {
-		"nvim-lua/plenary.nvim",		-- some lua functions the authors of neo-tree used
-		"MunifTanjim/nui.nvim",			-- UI Component Library
-		"nvim-tree/nvim-web-devicons", 	-- icons for the tree (neo-tree documentation says it’s not strictly required, but I *need* them)
+		"nvim-lua/plenary.nvim", -- some lua functions the authors of neo-tree used
+		"MunifTanjim/nui.nvim",  -- UI Component Library
+		"nvim-tree/nvim-web-devicons", -- icons for the tree (neo-tree documentation says it’s not strictly required, but I *need* them)
 	},
 	opts = {
 		close_if_last_window = true,
@@ -21,6 +21,19 @@ return {
 				visible = true,
 				hide_dotfiles = false,
 			},
+		},
+		default_component_configs = {
+			-- gruvbox colorscheme messes these up and uses DiagnosticSign<Severity>
+			-- just overriding this in gruvbox would cause the Diagnostics in the SignColumn to have the wrong background
+			-- this is the easiest fix
+			diagnostics = {
+				highlights = {
+					hint = "DiagnosticHint",
+					info = "DiagnosticInfo",
+					warn = "DiagnosticWarn",
+					error = "DiagnosticError",
+				},
+			}
 		},
 
 		-- hides the cursor in neo-tree-windows
@@ -43,8 +56,9 @@ return {
 		--},
 	},
 	keys = {
-		{"<leader>T", "<cmd>Neotree toggle show<CR>", desc = "Toggle File Explorer Visibility"},
-		{"<leader>t",
+		{ "<leader>T", "<cmd>Neotree toggle show<CR>", desc = "Toggle File Explorer Visibility" },
+		{
+			"<leader>t",
 			function()
 				if vim.bo.filetype == "neo-tree" then
 					vim.cmd.wincmd("p")

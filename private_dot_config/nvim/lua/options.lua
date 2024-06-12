@@ -30,5 +30,5 @@ vim.opt.splitbelow = true
 vim.opt.report = 0
 
 -- transparent popup-windows
-vim.opt.winblend = 25
+vim.opt.winblend = 15
 vim.opt.pumblend = 0

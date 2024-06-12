@@ -4,7 +4,7 @@ return {
 	lazy = false,
 
 	opts = {
-		highlight = { 
+		highlight = {
 			enable = true,
 			disable = { "latex" },
 		},
@@ -36,5 +36,6 @@ return {
 			"latex",
 			"bibtex",
 		},
+		auto_install = true,
 	},
 }

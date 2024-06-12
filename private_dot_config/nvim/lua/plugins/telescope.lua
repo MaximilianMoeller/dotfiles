@@ -8,25 +8,33 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-telescope/telescope-ui-select.nvim",
 	},
-	opts = {
-		defaults = {
-			winblend = vim.o.winblend,
-			mappings = {
-				i = {
-					["<Esc>"] = "close",
+	opts = function()
+		return {
+			defaults = {
+				winblend = vim.o.winblend,
+				mappings = {
+					i = {
+						["<Esc>"] = "close",
+					},
 				},
 			},
-		},
-		extensions = {
-			fzf = {},
-		},
-		pickers = {
-			find_files = {
-				-- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-				find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+			extensions = {
+				fzf = {},
+				-- shows code actions in little popup-window
+				["ui-select"] = {
+					require("telescope.themes").get_dropdown {
+						-- even more opts
+					}
+				},
 			},
-		},
-	},
+			pickers = {
+				find_files = {
+					-- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+					find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+				},
+			}
+		}
+	end,
 	config = function(_, opts)
 		local telescope = require("telescope")
 		telescope.setup(opts)
