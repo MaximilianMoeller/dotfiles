@@ -28,3 +28,7 @@ vim.opt.splitbelow = true
 
 -- always report on number of changed lines (no threshold)
 vim.opt.report = 0
+
+-- transparent popup-windows
+vim.opt.winblend = 25
+vim.opt.pumblend = 0

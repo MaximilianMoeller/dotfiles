@@ -1,6 +1,7 @@
 return{
 	"nvim-telescope/telescope.nvim",
 	branch = "0.1.x",
+	lazy = true,
 	event = "VeryLazy",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -9,7 +10,12 @@ return{
 	},
 	opts = {
 		defaults = {
-			winblend = 15,
+			winblend = vim.o.winblend,
+			mappings = {
+				i = {
+					["<esc>"] = "close",
+				},
+			},
 		},
 		extensions = {
 			fzf = {},
@@ -24,19 +30,6 @@ return{
 	config = function(_, opts)
 		local telescope = require("telescope")
 		telescope.setup(opts)
-
-		-- telescope starts in insert mode
-		-- the following makes <esc> exit telescope instead of just switching to normal mode
-		local actions = require("telescope.actions")
-		telescope.setup{
-			defaults = {
-				mappings = {
-					i = {
-						["<esc>"] = actions.close
-					},
-				},
-			}
-		}
 		telescope.load_extension("fzf")
 		telescope.load_extension("ui-select")
 	end,
