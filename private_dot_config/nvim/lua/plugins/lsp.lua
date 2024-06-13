@@ -44,6 +44,10 @@ return {
 				'hrsh7th/cmp-nvim-lsp',
 				--  nvim-cmp source for words in the active buffers
 				'hrsh7th/cmp-buffer',
+				-- nvim-cmp source for file system paths
+				'hrsh7th/cmp-path',
+				-- nvim-cmp source for vimtex, especially helpful for citekeys
+				"micangl/cmp-vimtex",
 			},
 			-- configuration for cmp
 			opts = function()
@@ -57,6 +61,8 @@ return {
 					sources = {
 						{ name = 'nvim_lsp' },
 						{ name = 'buffer' },
+						{ name = 'path' },
+						{ name = 'vimtex' },
 					},
 					--- Show source name in completion menu
 					formatting = cmp_format,
