@@ -104,6 +104,10 @@ return {
 				preserve_mappings = false
 			})
 
+			-- use telescope for implementation and reference overview
+			vim.keymap.set('n', 'gi', '<cmd>Telescope lsp_implementations<cr>', { buffer = bufnr })
+			vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', { buffer = bufnr })
+
 			-- enable asynchronous formatting-on-save
 			-- assumes that only one language server is attached to any one buffer
 			if client.supports_method('textDocument/formatting') then

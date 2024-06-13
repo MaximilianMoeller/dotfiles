@@ -15,6 +15,9 @@ return {
 				mappings = {
 					i = {
 						["<Esc>"] = "close",
+						["<C-?>"] = "which_key",
+						["<C-l>"] = "preview_scrolling_up",
+						["<C-a>"] = "preview_scrolling_down",
 					},
 				},
 			},
@@ -48,6 +51,7 @@ return {
 			{ "<leader>ff", builtin.find_files,  desc = "Find Files" },
 			{ "<leader>fg", builtin.live_grep,   desc = "Find Grep" },
 			{ "<leader>fc", builtin.colorscheme, desc = "Find Colorschemes" },
+			{ "<leader>f?", builtin.keymaps,     desc = "Vim custom normal mode keymaps" },
 		}
 	end,
 }
