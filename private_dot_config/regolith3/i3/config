@@ -22,7 +22,6 @@ smart_borders on
 floating_minimum_size 300 x 200
 floating_maximum_size -1 x -1
 
-
 # window focus follows your mouse movements as the mouse crosses window borders
 focus_follows_mouse yes
 
@@ -93,6 +92,9 @@ set $ws10_key 0
 
 # Terminal
 bindsym $mod+Return exec /usr/bin/x-terminal-emulator
+
+# Default text editor (neovim)
+bindsym $mod+y exec /usr/bin/x-terminal-emulator -e nvim -c "Telescope projects"
 
 # Browser
 bindsym $mod+Shift+Return exec gtk-launch $(xdg-settings get default-web-browser)
