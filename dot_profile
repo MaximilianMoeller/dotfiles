@@ -49,7 +49,9 @@ if [ -d "$HOME/.local/share/JetBrains/Toolbox/scripts" ] ; then
     PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
 fi
 
-# TODO: setup gurobi in a way that does not cause troubles if it is not installed.
-export GUROBI_HOME="/opt/gurobi1001/linux64"  
-export PATH="${PATH}:${GUROBI_HOME}/bin"  
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
+# gurobi is installed in /opt/gurobi[XXYY] with XX = major version, YY = minor version
+if [[ $(find /opt/ -maxdepth 1 -name "gurobi????" -type d) ]] ; then
+	export GUROBI_HOME=$(find /opt/ -maxdepth 1 -name "gurobi????" -type d -print0 | xargs -0)
+	export PATH="${PATH}:${GUROBI_HOME}/bin"  
+	export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
+fi
