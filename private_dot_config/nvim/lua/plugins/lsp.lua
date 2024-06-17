@@ -24,7 +24,7 @@ return {
 					"texlab", --LaTeX
 					"lua_ls", --Lua
 					"autotools_ls", --makefiles
-					"markdown_oxide", --Markdown (mayber try others)
+					"marksman", --Markdown
 					"pylsp", --Python
 					"rust_analyzer", --Rust
 					"taplo", --TOML
