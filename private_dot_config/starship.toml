@@ -39,4 +39,8 @@ error_symbol = "[➜](red bold)"
 
 [python]
 symbol = '🐍 '
-format = '[(\(${symbol}(${version} )($virtualenv)\))]($style)'
+format = '[(\(${symbol}(${version})( $virtualenv)\))]($style)'
+# don’t activate only because there is a `*.py`-file in the cwd
+detect_extensions = []
+# activate when either a `venv` or `.venv` environment are present
+detect_folders = ['venv', '.venv']
