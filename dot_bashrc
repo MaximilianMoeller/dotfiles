@@ -116,10 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ -f "$HOME/.cargo/env" ]; then
-	. "$HOME/.cargo/env"
-fi
-
 eval "$(starship init bash)"
 
 eval "$(thefuck --alias)"
@@ -128,3 +124,4 @@ if [ -d "$HOME/.autoenv" -a -f "$HOME/.autoenv/activate.sh" ]; then
 	export AUTOENV_ENABLE_LEAVE="true"
 	source ~/.autoenv/activate.sh
 fi
+source ~/.autoenv/activate.sh
