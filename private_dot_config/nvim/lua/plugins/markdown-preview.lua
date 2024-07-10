@@ -4,7 +4,7 @@ local M = {
 	ft = { "markdown" },
 	build = function() vim.fn["mkdp#util#install"]() end,
 	keys = {
-		{ "<leader>xl", "<cmd>MarkdownPreviewToggle<cr>", desc = "Toggle Markdown Preview" }
+		{ "<leader>xl", "<cmd>MarkdownPreviewToggle<cr>", desc = "Toggle Markdown Preview", ft = "markdown" }
 	}
 }
 
