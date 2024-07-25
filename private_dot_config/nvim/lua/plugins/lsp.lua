@@ -113,6 +113,11 @@ return {
 			if client.supports_method('textDocument/formatting') then
 				require('lsp-format').on_attach(client)
 			end
+
+			-- maybe(?) this could/(should?) be done in the `handlers`-table of the `mason-lspconfig`-setup below, but idk, works for now
+			if client.name == "clangd" then
+				vim.keymap.set('', 'gh', '<cmd>ClangdSwitchSourceHeader<cr>', { buffer = bufnr })
+			end
 		end)
 
 		-- Font-Awesome (https://github.com/FortAwesome/Font-Awesome) icons for consistency
@@ -130,7 +135,8 @@ return {
 				function(server_name)
 					require('lspconfig')[server_name].setup({})
 				end,
-				-- if a specific language server needs special configuration, proceed as follows:
+				-- if a specific language server needs special configuration, proceed as follows
+				-- and see `:h mason-lspconfig.setup_handlers()` for more information:
 				-- ```
 				-- example_server = function()
 				-- -- special setup (if needed), usually it’s just:
