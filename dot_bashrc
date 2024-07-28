@@ -124,4 +124,3 @@ if [ -d "$HOME/.autoenv" -a -f "$HOME/.autoenv/activate.sh" ]; then
 	export AUTOENV_ENABLE_LEAVE="true"
 	source ~/.autoenv/activate.sh
 fi
-source ~/.autoenv/activate.sh
