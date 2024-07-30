@@ -1,11 +1,13 @@
 [core]
-	# ignore filemode changes, e.g. -rwxrwxr-x -> -rwxrwx---
-	filemode = false
+	# “tells Git if the executable bit of files in the working tree is to be honored.”
+	filemode = true
 	editor = nvim
 	# some globally ignored files
 	excludesfile = ~/.gitignore_global
 	# if windows-like linebreaks (i.e. CarriageReturn AND LineFeed) are detected when checking in a file, automatically convert them to linux-like linebreaks
 	autocrlf = input
+	# honor symlinks
+	symlinks = true
 [user]
 	name = Max Moeller
 	email = maximilian.moeller@mailbox.tu-dresden.de
