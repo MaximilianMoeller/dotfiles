@@ -56,3 +56,8 @@ if [[ $(find /opt/ -maxdepth 1 -name "gurobi????" -type d) ]] ; then
 	export PATH="${PATH}:${GUROBI_HOME}/bin"  
 	export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
 fi
+
+if [ -d "$HOME/.deno/bin" ] ; then
+	export DENO_INSTALL="$HOME/.deno"
+	export PATH="$DENO_INSTALL/bin:$PATH"
+fi
