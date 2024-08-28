@@ -262,8 +262,6 @@ bindsym $mod+$i3-wm.binding.lock exec $i3-wm.program.lock
 
 # Enter Resize Mode
 mode "Resize Mode" {
-        # These bindings trigger as soon as you enter the resize mode
-
         # Resize Window
         bindsym i resize shrink width 5 px or 5 ppt
         bindsym l resize grow height 5 px or 5 ppt
@@ -286,9 +284,12 @@ mode "Resize Mode" {
         bindsym $mod+r mode "default"
 
 		 # Window Gaps
-		bindsym Prior gaps inner current minus 2
-		bindsym Next gaps inner current plus 2
+		bindsym Prior gaps inner all minus 2
+		bindsym Next gaps inner all plus 2
+		bindsym Shift+Prior gaps inner all minus 20
+		bindsym Shift+Next gaps inner all plus 20
 }
+
 bindsym $mod+r mode "Resize Mode"
 
 set $RoboLabMode "RoboLab Mode: [p]articipant data [r]epo [c]urrent runs [l]ock screen"

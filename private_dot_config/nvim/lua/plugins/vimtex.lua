@@ -15,6 +15,7 @@ return {
 			'Neither package',
 		}
 	end,
+	-- TODO: package documentation should work via `K`, but somehow doesn’t by default.
 	keys = function()
 		return {
 			{ "<leader>x?", '<Plug>(vimtex-doc-package)', ft = "tex", desc = "Show LaTeX package documentation" }
