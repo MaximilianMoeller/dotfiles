@@ -28,6 +28,7 @@ return {
 					"pylsp", --Python
 					"rust_analyzer", --Rust
 					"taplo", --TOML
+					"harper_ls", --english grammar- and spelling-checker
 				},
 			}
 		},
@@ -129,24 +130,53 @@ return {
 		})
 
 		-- must come after lsp_zero
-		require('mason-lspconfig').setup({
-			handlers = {
-				-- default setup for all language servers
-				function(server_name)
-					require('lspconfig')[server_name].setup({})
-				end,
-				-- if a specific language server needs special configuration, proceed as follows
-				-- and see `:h mason-lspconfig.setup_handlers()` for more information:
-				-- ```
-				-- example_server = function()
-				-- -- special setup (if needed), usually it’s just:
-				--	require('lspconfig').example_server.setup({
-				--		-- custom parameters
-				--	})
-				-- end
-				-- ```
-			},
-		})
+		require('mason-lspconfig').setup()
+		require('mason-lspconfig').setup_handlers {
+			-- default setup for all language servers
+			function(server_name)
+				require('lspconfig')[server_name].setup({})
+			end,
+			-- I thought I might be able to trick harper_ls into working on LaTeX as well
+			-- (currently not supported), but, as Latex has many non-English-tokens and a
+			-- pretty complicated syntax-tree, this did not work.
+			-- The following *did* indeed attach harper_ls to tex-files, but it wouldn't
+			-- do any linting.
+			-- ["harper_ls"] = function()
+			-- 	require("lspconfig").harper_ls.setup {
+			-- 		filetypes = { "markdown",
+			-- 			"rust",
+			-- 			"typescript",
+			-- 			"typescriptreact",
+			-- 			"javascript",
+			-- 			"python",
+			-- 			"go",
+			-- 			"c",
+			-- 			"cpp",
+			-- 			"ruby",
+			-- 			"swift",
+			-- 			"cs",
+			-- 			"toml",
+			-- 			"lua",
+			-- 			"gitcommit",
+			-- 			"java",
+			-- 			"html",
+			-- 			"tex",
+			-- 			"plaintex", },
+			-- 	}
+			-- end
+			--
+			--
+			-- if a specific language server needs special configuration, proceed as follows
+			-- and see `:h mason-lspconfig.setup_handlers()` for more information:
+			-- ```
+			-- example_server = function()
+			-- -- special setup (if needed), usually it’s just:
+			--	require('lspconfig').example_server.setup({
+			--		-- custom parameters
+			--	})
+			-- end
+			-- ```
+		}
 
 
 		-- TODO: For some reasons doesnt work
