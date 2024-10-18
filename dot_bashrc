@@ -118,7 +118,9 @@ fi
 
 eval "$(starship init bash)"
 
-eval "$(thefuck --alias)"
+if  type "thefuck" > /dev/null 2>&1; then
+	eval "$(thefuck --alias)"
+fi
 
 if [ -d "$HOME/.autoenv" -a -f "$HOME/.autoenv/activate.sh" ]; then
 	export AUTOENV_ENABLE_LEAVE="true"
