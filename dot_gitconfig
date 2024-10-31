@@ -24,6 +24,16 @@
 	unstage = restore --staged --
 [log]
 	date = format:%A, %d.%m.%y, %R
+[diff]
+    tool = kitty
+    guitool = kitty.gui
+[difftool]
+    prompt = false
+    trustExitCode = true
+[difftool "kitty"]
+    cmd = kitten diff $LOCAL $REMOTE
+[difftool "kitty.gui"]
+    cmd = kitten diff $LOCAL $REMOTE
 [credential]
 	# cache credentials for one hour
 	helper = cache --timeout 3600

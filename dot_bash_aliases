@@ -4,7 +4,7 @@ alias conf='cd ~/dotfiles/config && nvim'
 alias update='sudo apt update && sudo apt upgrade'
 
 alias gs='git status'
-alias gd='git diff'
+alias gd='git difftool'
 alias gt='git tree'
 alias gtd='git tree-detailed'
 alias gl='git last'
