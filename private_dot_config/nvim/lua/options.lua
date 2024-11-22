@@ -1,13 +1,14 @@
 -- line numbering
-vim.opt.number = true -- show number lines
+vim.opt.number = true         -- show number lines
 vim.opt.relativenumber = true -- show relative numbers
+vim.opt.cursorline = true     -- highlight current cursor line
 
 -- indentation
-vim.opt.tabstop = 4 -- render \t as 4 spaces
-vim.opt.shiftwidth = 4 -- indentation is rendered as 4 spaces
-vim.opt.softtabstop = 0 -- don't use a mixture of spaces and \t
-vim.opt.expandtab = false -- don't use spaces instead of \t when pressing <Tab>
-vim.opt.autoindent = true -- copy indent from current line when starting a new line
+vim.opt.tabstop = 4        -- render \t as 4 spaces
+vim.opt.shiftwidth = 4     -- indentation is rendered as 4 spaces
+vim.opt.softtabstop = 0    -- don't use a mixture of spaces and \t
+vim.opt.expandtab = false  -- don't use spaces instead of \t when pressing <Tab>
+vim.opt.autoindent = true  -- copy indent from current line when starting a new line
 vim.opt.smartindent = true -- smart indentation for C-like programming languages
 
 -- line wrapping
