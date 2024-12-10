@@ -1,32 +1,47 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
-	branch = "v3.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim", -- some lua functions the authors of neo-tree used
 		"MunifTanjim/nui.nvim",  -- UI Component Library
 		"nvim-tree/nvim-web-devicons", -- icons for the tree (neo-tree documentation says it’s not strictly required, but I *need* them)
 	},
+	lazy = false,                -- required for hijacking netrw
 	opts = {
 		close_if_last_window = true,
 		add_blank_line_at_top = true,
+
+		window = {
+			position = "left",
+			width = 40,
+		},
 
 		popup_border_style = "rounded",
 		source_selector = {
 			winbar = true,
 			statusline = false,
 		},
-		filesystem = {
-			follow_current_file = { enabled = false, leave_dirs_open = true },
+		filesystem = { -- for the filesystem tab (the first one)
 			filtered_items = {
 				visible = true,
 				hide_dotfiles = false,
+				hide_gitignored = false,
 			},
-		},
-		buffers = {
 			follow_current_file = {
-				enabled = true, -- This will find and focus the file in the active buffer every time
+				enabled = true,            -- This will find and focus the file in the active buffer every time
 				--              -- the current file is changed while the tree is open.
-				leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+				leave_dirs_open = true,    -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+			},
+			bind_to_cwd = true,            -- true creates a 2-way binding between vim's cwd and neo-tree's root
+			cwd_target = {
+				sidebar = "tab",           -- sidebar is when position = left or right
+			},
+			hijack_netrw_behavior = "open_default", -- use neo-tree when opening a whole directory in nvim
+		},
+		buffers = {                        -- for the buffers tab (the second one)
+			follow_current_file = {
+				enabled = true,            -- This will find and focus the file in the active buffer every time
+				--              -- the current file is changed while the tree is open.
+				leave_dirs_open = false,   -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
 			}
 		},
 
@@ -43,25 +58,6 @@ return {
 				},
 			}
 		},
-
-		-- hides the cursor in neo-tree-windows
-		-- somehow not working
-		--event_handlers = {
-		--	{
-		--		event = "neo_tree_buffer_enter",
-		--		handler = function()
-		--			-- This effectively hides the cursor
-		--			vim.cmd 'highlight! Cursor blend=100'
-		--		end
-		--	},
-		--	{
-		--		event = "neo_tree_buffer_leave",
-		--		handler = function()
-		--			-- Make this whatever your current Cursor highlight group is.
-		--			vim.cmd 'highlight! Cursor guibg=#5f87af blend=0'
-		--		end
-		--	}
-		--},
 	},
 	keys = {
 		{ "<leader>T", "<cmd>Neotree toggle show<CR>", desc = "Toggle File Explorer Visibility" },
