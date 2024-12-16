@@ -21,7 +21,7 @@ return {
 					"clangd", --C and C++
 					"cmake", --CMake
 					-- "jsonls", --JSON TODO
-					"texlab", --LaTeX
+					-- "texlab", --LaTeX (breaks vimtex)
 					"lua_ls", --Lua
 					"autotools_ls", --makefiles
 					"marksman", --Markdown
@@ -48,7 +48,7 @@ return {
 				-- nvim-cmp source for file system paths
 				'hrsh7th/cmp-path',
 				-- nvim-cmp source for vimtex, especially helpful for citekeys
-				"micangl/cmp-vimtex",
+				-- "micangl/cmp-vimtex",
 			},
 			-- configuration for cmp
 			opts = function()
@@ -63,7 +63,7 @@ return {
 						{ name = 'nvim_lsp' },
 						{ name = 'buffer' },
 						{ name = 'path' },
-						{ name = 'vimtex' },
+						-- { name = 'vimtex' },
 					},
 					--- Show source name in completion menu
 					formatting = cmp_format,
