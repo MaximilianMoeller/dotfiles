@@ -16,7 +16,7 @@
 [pull]
 	rebase = true
 [alias]
-	tree = log --all --format="%C(auto) %h (%aN)%d %s" --graph
+	tree = log --all --format='%C(auto) %h (%aN)%d %s' --graph
 	# uses literal whitespaces instead of some '\t'-construction, because in the graph this might still result in different indentation
 	tree-detailed = log --all --graph --pretty=format:'%C(auto)%h%d%n Summary:  %s%n Date:     %cd%n Author:   %aN <%aE>%n' --compact-summary
 	last = log -1 HEAD --decorate --pretty=format:'%C(auto)%h%d%n Summary:  %s%n Date:     %cd%n Author:   %aN <%aE>%n' --compact-summary
