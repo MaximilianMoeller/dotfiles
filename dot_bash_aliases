@@ -16,4 +16,4 @@ alias gps='git push'
 alias gpl='git pull'
 alias gsu='git submodule update --remote'
 
-alias cat='batcat'
+alias cat='bat'
