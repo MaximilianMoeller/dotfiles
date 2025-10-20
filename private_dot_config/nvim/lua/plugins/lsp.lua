@@ -3,14 +3,14 @@ return {
 	dependencies = {
 		{
 			-- installs and manages language servers
-			'williamboman/mason.nvim',
+			'mason-org/mason.nvim',
 			-- Lazy only calls `require("mason").setup(…)` if opts = true, or the config function is defined.
 			-- config = true just means call the default implementation, namely `require(MAIN).setup(opts)`.
 			config = true,
 		},
 		{
 			-- TODO can this install all neded lsps automatically?
-			"williamboman/mason-lspconfig.nvim",
+			"mason-org/mason-lspconfig.nvim",
 			-- implicitly calls the `require("mason-lspconfig,).setup(_, opts)`-function.
 			-- this is done before the `require("nvim-lspconfig").setup(…)`-function, as `mason-lspconfig` is a dependency
 			-- this works well for the `ensure_installed`-option,
@@ -22,13 +22,15 @@ return {
 					"cmake", --CMake
 					-- "jsonls", --JSON TODO
 					-- "texlab", --LaTeX (breaks vimtex)
-					"lua_ls", --Lua
+					--"lua_ls", --Lua
 					"autotools_ls", --makefiles
 					"marksman", --Markdown
 					"pylsp", --Python
 					"rust_analyzer", --Rust
 					"taplo", --TOML
-					"harper_ls", --english grammar- and spelling-checker
+					--"harper_ls", --english grammar- and spelling-checker
+					"nil_ls", --nix
+					"nixfmt",
 				},
 			}
 		},
@@ -130,12 +132,11 @@ return {
 		})
 
 		-- must come after lsp_zero
-		require('mason-lspconfig').setup()
-		require('mason-lspconfig').setup_handlers {
+		require('mason-lspconfig').setup{
 			-- default setup for all language servers
 			function(server_name)
 				require('lspconfig')[server_name].setup({})
-			end,
+			end
 			-- I thought I might be able to trick harper_ls into working on LaTeX as well
 			-- (currently not supported), but, as Latex has many non-English-tokens and a
 			-- pretty complicated syntax-tree, this did not work.

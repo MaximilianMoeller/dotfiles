@@ -185,6 +185,7 @@ cython_debug/
 *.cb
 *.cb2
 .*.lb
+*-SAVE-ERROR
 
 ## Intermediate documents:
 *.dvi

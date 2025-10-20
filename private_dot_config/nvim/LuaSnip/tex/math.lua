@@ -80,22 +80,22 @@ return {
 		{condition = in_mathzone}),
 	s({trig="ceil", snippetType="autosnippet"},
 		fmta([=[
-			\lceil <> \rceil
+			\left\lceil <> \right\rceil
 		]=], {d(1, get_visual)}),
 		{condition = in_mathzone}),
 	s({trig="floor", snippetType="autosnippet"},
 		fmta([=[
-			\lfloor <> \rfloor
+			\left\lfloor <> \right\rfloor
 		]=], {d(1, get_visual)}),
 		{condition = in_mathzone}),
 	s({trig="norm", snippetType="autosnippet"},
 		fmta([=[
-			\lvert <> \rvert
+			\left\lvert <> \right\rvert
 		]=], {d(1, get_visual)}),
 		{condition = in_mathzone}),
 	s({trig="Norm", snippetType="autosnippet"},
 		fmta([=[
-			\lVert <> \rVert
+			\left\lVert <> \right\rVert
 		]=], {d(1, get_visual)}),
 		{condition = in_mathzone}),
 

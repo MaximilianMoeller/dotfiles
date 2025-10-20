@@ -21,6 +21,7 @@ map <A-F1> set "first-page-column 1:2"
 map <F2> set "pages-per-row 3"
 map <A-F2> set "pages-per-row 2"
 
-# fixes that zathura can only follow links if firefox is already open
-set sandbox none
+map <C-e> jumplist forward
+map <C-i> jumplist backward
+
 unmap q

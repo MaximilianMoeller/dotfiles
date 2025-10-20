@@ -10,7 +10,7 @@
 	symlinks = true
 [user]
 	name = Max Moeller
-	email = maximilian.moeller@mailbox.tu-dresden.de
+	email = mm.maximilian.moeller@gmail.com
 [init]
 	defaultBranch = main
 [pull]
